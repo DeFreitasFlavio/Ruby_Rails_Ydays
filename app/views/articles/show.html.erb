@@ -3,5 +3,6 @@
     <li>
     <p><%= @article.body %></p>
     </li>
+    <%= link_to "Edit", edit_article_path(@article) %>
 </ul>
 <%= link_to "View all Articles", root_path %>
