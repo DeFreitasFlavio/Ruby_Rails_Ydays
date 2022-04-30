@@ -1,8 +1,9 @@
 <h1><%= @article.title %></h1>
-<ul>
-    <li>
-    <p><%= @article.body %></p>
-    </li>
-    <%= link_to "Edit", edit_article_path(@article) %>
-</ul>
+
+<p><%= @article.body %></p>
+
+<div class="Button">
+  <%= button_to "Edit", edit_article_path(@article)%>
+  <%= button_to "Delete", article_path(@article.id), method: :delete %>
+</div>
 <%= link_to "View all Articles", root_path %>

@@ -2,16 +2,15 @@
 
 <% Article.all.each do |article| %>
 
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="../assets/CoucherDeSoleil.png" alt="Avatar" style="width:300px;height:200px;">
-    </div>
-    <div class="flip-card-back">
-      <h1><%= article.bro %></h1>
-      <%= link_to article.title, article %>
-    </div>
+<div class="card">
+  <div class="image">
+  <img src="../assets/CoucherDeSoleil.png" alt="Avatar" style="width:100%">
+  </div>
+  <div class="container">
+    <h1><%= article.bro %></h1>
+    <%= link_to article.title, article %>
   </div>
 </div>
+
 <% end %>
-<%= link_to "New Article", new_article_path %>
+<%= button_to "New Article", new_article_path(@article)%>
