@@ -1,6 +1,9 @@
   class ArticlesController < ApplicationController
     extend ActiveModel::Naming
 
+    def Home
+    end
+
     def index
       @articles = Article.all
     end
