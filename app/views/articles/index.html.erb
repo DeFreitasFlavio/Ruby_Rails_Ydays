@@ -1,26 +1,27 @@
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/Index.css">
-<head>
+<%= stylesheet_link_tag "index.css" %>
 
 <h1>Articles</h1>
 
-<% Article.all.each do |article| %>
+<div class="allCard">
+  <% Article.all.each do |article| %>
 
-<div class="card">
-  <div class="image">
-    <img src="../assets/CoucherDeSoleil.png" alt="Avatar" style="width:100%">
-  </div>
-  <div class="container">
-    <h1><%= article.bro %></h1>
-    <h3><%= article.title %></h3>
-    <button class="btn">
-    <a href="<%= article_path(article.id) %>" class="button">Lire la suite</a>
-    </button>
-  </div>
+    <div class="card">
+      <div class="image">
+        <img src="../assets/CoucherDeSoleil.png" alt="Avatar" style="width:100%">
+      </div>
+      <div class="container">
+        <p class="title"><%= article.title %></p>
+        <p class="bro">Créer par
+          <%= article.bro %></p>
+        <button class="btn">
+          <a href="<%= article_path(article.id) %>" class="button">Lire la suite</a>
+        </button>
+      </div>
+    </div>
+
+  <% end %>
 </div>
 
-<% end %>
-
-<h4><a href="<%= new_article_path(@article)%>">Crée un nouvelle article</a></h4>
-
+<button class="btn">
+  <a href="<%= new_article_path(@article) %>" class="button">Crée un nouvelle article</a>
+</button>

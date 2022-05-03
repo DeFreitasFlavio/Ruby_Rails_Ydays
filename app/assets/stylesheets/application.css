@@ -7,11 +7,12 @@ div.navbar {
 }
 
 body {
-  background-color: black;
-  color: white;
+  margin: 0;
+  background-color: white;
+  color: black;
   font-family: Arial, Helvetica, sans-serif;
 }
-a {
-  color: white;
+a.navbar {
   text-decoration: none !important;
+  color: white;
 }
