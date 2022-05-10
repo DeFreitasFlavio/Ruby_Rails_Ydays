@@ -1,4 +1,22 @@
+div.container {
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  padding: 7px;
+}
+
+div.Image {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(137, 211, 227, 0.4);
+  width: 650px;
+}
+
 h1 {
   padding-left: 16px;
-  color: blue;
+  color: white;
 }

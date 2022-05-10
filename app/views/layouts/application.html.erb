@@ -10,11 +10,17 @@
   </head>
 
   <body>
-    <div class="navbar">
-      <a class="navbar"<%= link_to "Home", root_path %>></a>
-      <a class="navbar"<%= link_to "Articles", articles_url %>></a>
-    </div>
-
+    <% if user_signed_in? %>
+      <div class="navbar">
+        <a class="navbar"<%= link_to "Home", root_path %></a>
+        <a class="navbar" <%= link_to "Champion", articles_url %></a>
+      </div>
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <a href="/users/sign_in">Sign in</a>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
