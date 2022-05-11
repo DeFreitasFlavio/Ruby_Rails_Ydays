@@ -1,18 +1,19 @@
 <%= stylesheet_link_tag "index.css" %>
 
-<h1>Articles</h1>
+<h1>Champion</h1>
 
 <div class="allCard">
   <% Article.all.each do |article| %>
-
     <div class="card">
       <div class="image">
-        <img src="../assets/CoucherDeSoleil.png" alt="Avatar" style="width:100%">
+        <img
+          src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltdd84b33ec501c137/60f9ede33f40e5481e85c0c6/RiotX_ChampionList_akshan_v2.jpg?quality=90&width=250 "
+          alt="Avatar"
+          style="width:100%"
+        >
       </div>
       <div class="container">
         <p class="title"><%= article.title %></p>
-        <p class="bro">Créer par
-          <%= article.bro %></p>
         <button class="btn">
           <a href="<%= article_path(article.id) %>" class="button">Lire la suite</a>
         </button>

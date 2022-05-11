@@ -1,9 +1,21 @@
-<h1><%= @article.title %></h1>
+<%= stylesheet_link_tag "show.css" %>
+<div class="All">
+  <div class="Content">
+    <div class="Background-Image">
+      <img
+        class="Background-Image"
+        src="https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt58b3304a9d38b091/60f5d6e21929bc58854d00a6/072221_AkshanChampionTheme_Banner.jpg"
+      >
+    </div>
+    <div class="content">
+      <h1><%= @article.title %></h1>
 
-<p><%= @article.body %></p>
-
-<div class="Button">
-  <%= button_to "Edit", edit_article_path(@article) %>
-  <%= button_to "Delete", article_path(@article.id), method: :delete %>
+      <p><%= @article.body %></p>
+      <div class="Button">
+        <%= link_to "Edit", edit_article_path(@article) %>
+        <%= button_to "Delete", article_path(@article.id), method: :delete %>
+        <%= link_to "Tous les Articles", articles_url %>
+      </div>
+    </div>
+  </div>
 </div>
-<%= link_to "Tous les Articles", articles_url %>
